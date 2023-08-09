@@ -1,19 +1,27 @@
 const express = require('express');
 const app = new express();
+app.use(express.json());
 
-require('dotenv').config({path:'./config.env'});
+//PORT
+const port = process.env.PORT || 3000;
 
-const port = process.env.PORT||3000;
-const Db = process.env.DATABASE;
+// dotenv file
+require('dotenv').config({ path: './config.env' });
 
-const mongoose = require('mongoose');
-mongoose.connect(Db).then(()=>{
-    console.log("succesfully connected to the database.. ")
-}).catch((err)=>{
-    console.log("error");
-})
+
+//mongoose database connection
+require('./Database/connection');
+
+//Router
+app.use(require('./Router/authentication'));
+
+//User Model
+const user = require('./Database/schema');
+
+
+
 
 // Server listening
-app.listen(port,()=>{
+app.listen(port, () => {
     console.log(`listening to port : ${port} `)
 })
