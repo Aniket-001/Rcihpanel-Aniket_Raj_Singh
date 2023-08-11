@@ -1,0 +1,35 @@
+.payment-box {
+    background-color: white;
+    width: 800px;
+    min-height: 30vh;
+    border-radius: 18px;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.payment-box .order-summery {
+    flex: 4;
+    padding: 25px 15px;
+    background-color: #F4F5F6;
+    border-radius: 0 18px 18px 0;
+}
+
+.payment-box .order-summery h5 {
+    margin-bottom: 15px;
+}
+
+.payment-box .order-summery .order-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.payment-box .order-summery .order-row > p {
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.payment-box .card-info {
+    padding: 25px;
+    flex: 6;
+}
